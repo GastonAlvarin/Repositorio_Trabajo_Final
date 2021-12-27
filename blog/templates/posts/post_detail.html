@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container">
+        <div class="bg-light p-5 rounded mt-3">
+        <h1>{{object.titulo}}</h1>
+        <p class="lead">{{object.contenido}}</p>
+        <a class="btn btn-lg btn-primary" href="{% url 'Lista' %}" role="button">volver a lista»</a>
+        <a class="btn btn-lg btn-primary" href="{% url 'update' object.id %}" role="button">Modificar</a>
+        </div>
+
+        {% for c in Comentarios %}
+        <h1>{{c.contenido}}</h1>
+              
+        {% endfor %}
+
+    </main>
+
+    
+{% endblock %}
+

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Cuidemos el Mundo</h1>
+          <div class="top_image">
+            
+          <p class="fs-5 text-muted">
+            Nuestro planeta es nuestra casa y nos pertenece a todos.
+            Cuidemos la tierra, el aire y el agua
+            porque es necesario para seguir viviendo.
+            Todos podemos cuidar y preservar la vida en nuestro planeta.</p>
+            <img src="https://tec.mx/sites/default/files/inline-images/panta-arbol-naturaleza-medio-ambiente-acmbio-climatico.jpg"
+            width="800px">
+        </div>
+
+        
+
+
+
+
+        <hr class="featurette-divider">
+        <h2 class="display-4 fw-normal">Algunas de las formas en las que podemos colaborar son las siguientes:</h2>
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h3 class="featurette-heading">Reciclaje--><span class="text-muted">El reciclaje es el proceso de recolección y transformación de materiales para convertirlos en nuevos productos, y que de otro modo serían desechados como basura. Su incorrecta gestión como residuo provoca contaminación por residuos plásticos, vidrio, etc.</span></h3>
+          </div>
+          <div class="col-md-5">
+            <svg</svg><img src="https://t2.ev.ltmcdn.com/es/posts/6/6/0/cuales_son_los_beneficios_de_reciclar_66_orig.jpg"width="400px">
+    
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h3 class="featurette-heading">conservacion de los bosques--> <span class="text-muted">Los ecosistemas forestales tienen la capacidad de disminuir el efecto invernadero a través de dos procesos relacionados al ciclo del carbono, la fijación o captura de carbono.</span></h3>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <svg</svg> <img src="https://d2jhl5pzkfi24b.cloudfront.net/course_image/0001/01/thumb_200_course_image_big.jpeg"width="400px">
+    
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h3 class="featurette-heading">Cuidado del agua--><span class="text-muted">La vida en la Tierra existe gracias a la presencia de agua en el planeta, sobre todo por la que se encuentra en estado líquido. El “oro azul” como ya se ha comenzado a llamar a este recurso, recibe dicho nombre por la importancia que tiene para nuestra existencia y a la vez por su escasez.</span></h3>
+          </div>
+          <div class="col-md-5">
+            <svg</svg><img src="https://www.cespt.gob.mx/img/importancia.jpg"width="300px">
+    
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h3 class="featurette-heading">Produccion y consumo sostenible--> <span class="text-muted">El consumo y la producción sostenible consisten en fomentar el uso eficiente de los recursos y la energía, la construcción de infraestructuras que no dañen el medio ambiente, la mejora del acceso a los servicios básicos y la creación de empleos ecológicos, justamente remunerados y con buenas condiciones laborales.</span></h3>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <svg</svg> <img src="https://sostenibles.org/wp-content/uploads/2020/06/zero-residuos.jpg"width="400px">
+          </div>
+        </div>
+
+
+        {% if posts %}
+            <div class='row'>
+              {% for post in posts %}
+                    <div class="col-md-4">
+                      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                      <div class="col p-4 d-flex flex-column position-static">
+                          <h3 class="mb-0">{{post.titulo}}</h3>
+                          <div class="mb-1 text-muted">{{post.fecha_creacion}}</div>
+                          <p class="card-text mb-auto">{{post.contenido}}</p>
+                          <a href="{% url 'detalle' post.id %}" class="stretched-link">Mas Detalles</a>
+                      </div>
+                      </div>
+                    </div>
+              {% endfor %}
+            </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+          No hay noticias 
+        </div>
+        
+        {% endif %}
+        <footer>
+          <div class="row">
+            <div class="col-lg-4">
+              <svg></svg><img src="https://battlehero.io/es/images/resource/maria-jose.png"width="200px">
+          
+              <h2>Integrante</h2>
+              <p>Daniel Adrián Martínez</p>
+
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <svg></svg><img src="https://battlehero.io/es/images/resource/oscar-martin.png"width="200px">
+          
+              <h2>Integrante</h2>
+              <p>Walter Gaston Alvarin</p>
+  
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <svg></svg><img src="https://battlehero.io/es/images/resource/ruben.png"width="200px">
+          
+              <h2>Integrante</h2>
+              <p>Veronica Jessica Duarte</p>
+
+            </div><!-- /.col-lg-4 -->
+          </div>
+        </footer>
+{% endblock %}
+

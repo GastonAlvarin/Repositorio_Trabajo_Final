@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="col d-flex justify-content-center align-items-center ">
+	<form method="post" class="col-8" novalidate>
+		{% csrf_token %}
+
+		<div class="row">
+			<div class="col-6">
+
+				{{form.autor}}
+			</div>
+			<div class="col-6">
+				{{form.titulo}}
+			</div>
+		</div>
+		        {{form.contenido}}
+		
+	    <input type="submit" class="btn btn-info" value="Guardar">
+	</form>
+</div>
+{% endblock %}
